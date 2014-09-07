@@ -1,7 +1,7 @@
 Source: xbmc
 Section: video
 Priority: optional
-Maintainer: wsnipex <wsnipex@xbmc.org>
+Maintainer: Tuomas Kulve <tuomas@kulve.fi>
 Build-Depends: debhelper (>= 7.0.50~),
  autoconf,
  automake,
@@ -28,7 +28,6 @@ Build-Depends: debhelper (>= 7.0.50~),
  libcdio-dev,
  libcec2 (>= 2.1),
  libcec-dev (>= 2.1),
- libcrystalhd-dev,
  libcurl4-openssl-dev | libcurl4-gnutls-dev | libcurl-dev,
  libcwiid-dev,
  libdbus-1-dev,
@@ -58,6 +57,7 @@ Build-Depends: debhelper (>= 7.0.50~),
  libpcre3-dev,
  libplist-dev,
  libpng12-dev | libpng-dev,
+ libpostproc-dev,
  libpulse-dev,
  librtmp-dev,
  libsamplerate-dev,
@@ -92,7 +92,7 @@ Build-Depends: debhelper (>= 7.0.50~),
  yasm,
  zip,
  zlib1g-dev
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://xbmc.org/
 Vcs-Git: git://github.com/xbmc/xbmc-packaging.git
 Vcs-Browser: https://github.com/xbmc/xbmc-packaging
@@ -101,6 +101,7 @@ Package: xbmc
 Architecture: all
 Depends: xbmc-bin (>= ${source:Version}),
          xbmc-bin (<< ${source:Version}.1~),
+         curl,
          mesa-utils,
          x11-utils,
          ttf-liberation | fonts-liberation,
@@ -111,7 +112,6 @@ Depends: xbmc-bin (>= ${source:Version}),
          libmad0,
          libass4,
          libssh-4 | libssh2-1,
-         swig,
          libnfs1,
          libbluray1,
          libshairport1,

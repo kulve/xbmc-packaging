@@ -4,13 +4,13 @@
 # generate it into an orig source tarball for Debian.
 
 # Common variables used to ease maintenance of this script
-XBMC_MAJOR_VERSION="12.0"
-EPOCH="2"
+XBMC_MAJOR_VERSION="13.2"
+EPOCH="3"
 PPA_REVISION="1"
 XBMC_GIT_URL="git://github.com/xbmc/xbmc.git"
 DEFAULT_XBMC_BRANCH="master"
-UBUNTU_SUITES=("oneiric" "precise" "quantal")
-XBMC_SOURCE="./xbmc"
+UBUNTU_SUITES=("trusty")
+XBMC_SOURCE="../xbmc"
 # This is the where the XBMC source repo should be cloned. You can use a local
 # tree if you have one. Origin will be updated, but it is otherwise read-only.
 
@@ -255,22 +255,28 @@ create_source_packages() {
     done
   else
     # Create debian/control
+    rm debian/control
     perl -p \
     -e 's{#BUILD_DEPENDS#}{qx(sh var_info BUILD_DEPENDS)}ge;' \
     < control.in > $(echo debian/control.in | sed 's/\.in$//')
 
     # Place appropriate rules file in debian directory
-    cp -f rules.distro debian/rules
+    rm debian/rules
+    cp -f rules.unified debian/rules
 
     # Replace debian directory in build dir
     rm -rf "${BUILDDIR}/debian"
     cp -r ./debian "${BUILDDIR}"
 
+    # Replace links with actual files
+    rm "${BUILDDIR}/debian/var_info" "${BUILDDIR}/debian/control.in"
+    cp var_info control.in "${BUILDDIR}/debian/"
+
     pushd ${BUILDDIR} >/dev/null
 
-    dch --force-distribution -D "UNRELEASED" \
+    dch --force-distribution -D "unstable" \
       -b -v "${EPOCH}:${XBMC_VERSION}-1" \
-      "TEST PACKAGE! NOT MEANT FOR RELEASE." 2>/dev/null
+      "Jetson TK1 with HW rendering and SW decoding." 2>/dev/null
 
     # Create source package
     dpkg-buildpackage -rfakeroot -us -uc -S -sa
