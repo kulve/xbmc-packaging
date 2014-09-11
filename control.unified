@@ -1,7 +1,7 @@
 Source: kodi
 Section: video
 Priority: optional
-Maintainer: wsnipex <wsnipex@xbmc.org>
+Maintainer: Tuomas Kulve <tuomas@kulve.fi>
 Build-Depends: debhelper (>= 7.0.50~),
  autoconf,
  automake,
