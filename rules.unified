@@ -52,7 +52,7 @@ KODI_CONFIG_OPTIONS ?= --host=$(DEB_HOST_GNU_TYPE) \
   $(HW_DECODER_OPTIONS) \
   --disable-vdadecoder \
   --disable-vtbdecoder \
-  --disable-openmax \
+  --enable-openmax \
   --disable-tegra \
   --disable-profiling \
   --enable-joystick \
