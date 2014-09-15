@@ -1,7 +1,7 @@
 Source: kodi
 Section: video
 Priority: optional
-Maintainer: wsnipex <wsnipex@xbmc.org>
+Maintainer: Tuomas Kulve <tuomas@kulve.fi>
 Build-Depends: #BUILD_DEPENDS#
 Standards-Version: 3.9.4
 Homepage: http://kodi.tv/
