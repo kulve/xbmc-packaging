@@ -9,7 +9,7 @@ Vcs-Git: git://github.com/xbmc/xbmc-packaging.git
 Vcs-Browser: https://github.com/xbmc/xbmc-packaging
 
 Package: kodi
-Architecture: all
+Architecture: armhf
 Depends: kodi-bin (>= ${source:Version}),
          kodi-bin (<< ${source:Version}.1~),
          curl,
@@ -77,7 +77,7 @@ Description: Kodi Media Center (arch-independent data package)
  working Kodi.
 
 Package: kodi-bin
-Architecture: i386 amd64 armhf
+Architecture: armhf
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Recommends: ${shlibs:Recommends}
@@ -106,7 +106,7 @@ Description: Kodi Media Center (binary data package)
 
 Package: kodi-eventclients-common
 Provides: xbmc-eventclients-common
-Architecture: all
+Architecture: armhf
 Depends: ${python:Depends}, ${misc:Depends}
 Description: Kodi Media Center (Event Client Common package)
  Kodi, formerly known as XBMC Media Center, is an award winning free and
@@ -130,7 +130,7 @@ Description: Kodi Media Center (Event Client Common package)
 
 Package: kodi-eventclients-dev
 Provides: xbmc-eventclients-dev
-Architecture: all
+Architecture: armhf
 Section: libdevel
 Depends: kodi-eventclients-common (= ${binary:Version}),
          ${misc:Depends}
@@ -156,7 +156,7 @@ Description: Kodi Media Center (Event Client Dev package)
 
 Package: kodi-eventclients-wiiremote
 Provides: xbmc-eventclients-wiiremote
-Architecture: i386 amd64 armhf
+Architecture: armhf
 Depends: kodi-eventclients-common (= ${source:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -182,7 +182,7 @@ Description: Kodi Media Center (Event Client WII Remote support package)
 
 Package: kodi-eventclients-j2me
 Provides: xbmc-eventclients-j2me
-Architecture: all
+Architecture: armhf
 Depends: kodi-eventclients-common (= ${binary:Version}),
          ${python:Depends},
          python-bluez | python-lightblue,
@@ -210,7 +210,7 @@ Description: Kodi Media Center (Event Client J2ME package)
 
 Package: kodi-eventclients-ps3
 Provides: xbmc-eventclients-ps3
-Architecture: all
+Architecture: armhf
 Depends: kodi-eventclients-common (= ${binary:Version}),
          python-bluez | python-lightblue,
          ${python:Depends},
@@ -237,7 +237,7 @@ Description: Kodi Media Center (Event Client PS3 package)
 
 Package: kodi-eventclients-xbmc-send
 Provides: xbmc-eventclients-xbmc-send
-Architecture: all
+Architecture: armhf
 Depends: kodi-eventclients-common (= ${binary:Version}),
          ${python:Depends},
          ${misc:Depends}
@@ -288,7 +288,7 @@ Description: Kodi Media Center (General Add-on Dev package)
 
 Package: kodi-screensaver-dev
 Provides: xbmc-screensaver-dev
-Architecture: all
+Architecture: armhf
 Section: libdevel
 Description: Kodi Media Center (Screensaver Add-on Dev package)
  Kodi, formerly known as XBMC Media Center, is an award winning free and
@@ -312,7 +312,7 @@ Description: Kodi Media Center (Screensaver Add-on Dev package)
 
 Package: kodi-visualization-dev
 Provides: xbmc-visualization-dev
-Architecture: all
+Architecture: armhf
 Section: libdevel
 Description: Kodi Media Center (Visualization Add-on Dev package)
  Kodi, formerly known as XBMC Media Center, is an award winning free and
@@ -336,7 +336,7 @@ Description: Kodi Media Center (Visualization Add-on Dev package)
 
 Package: kodi-pvr-dev
 Provides: xbmc-pvr-dev
-Architecture: all
+Architecture: armhf
 Section: libdevel
 Description: Kodi Media Center (PVR Add-on Dev package)
  Kodi, formerly known as XBMC Media Center, is an award winning free and
@@ -360,7 +360,7 @@ Description: Kodi Media Center (PVR Add-on Dev package)
 
 Package: kodi-audio-dev
 Provides: xbmc-audio-dev
-Architecture: all
+Architecture: armhf
 Section: libdevel
 Description: Kodi Media Center (Audio Add-on Dev package)
  Kodi, formerly known as XBMC Media Center, is an award winning free and
