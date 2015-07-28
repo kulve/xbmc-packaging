@@ -1,3 +1,9 @@
+kodi (2:15.0) trusty; urgency=low
+
+  * Kodi 15.0
+
+ -- Tuomas Kulve <tuomas@kulve.fi>  Tue, 28 Jul 2015 18:50:04 +0300
+
 kodi (2:14.0~git20141010-1) trusty; urgency=low
 
   * initial Kodi release
